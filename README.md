@@ -24,7 +24,7 @@
 * [visualization.py](visualizations.py) is the function for adding visalization
 
 ---
-Others are the same as in the repository of [Lane Departure Warning System](https://github.com/JunshengFu/autonomous-driving-lane-departure-warning):
+Others are the same as in the repository of [Lane Departure Warning System](https://github.com/zakirhunter/autonomous-driving-lane-departure-warning):
 * [calibration.py](calibration.py) contains the script to calibrate camera and save the calibration results
 * [lane.py](model.h5) contains the lane class 
 * [examples](examples) folder contains the sample images and videos
@@ -193,14 +193,4 @@ Since the "car" is known to YOLO, I use the precomputed weights directly and app
 
 ---
 
-### Discussion
-For the SVM based approach, the accuray is good, but the speed (2 fps) is an problem due to the fact of sliding window approach 
-is time consuming! We could use image downsampling, multi-threads, or GPU processing to improve the speed. But, there are probably
-a lot engineering work need to be done to make it running real-time. Also, in this application, I limit the vertical searching 
-range to control the number of searching windows, as well as avoid some false positives (e.g. cars on the tree).
 
-For YOLO based approach, it achieves real-time and the accuracy are quite satisfactory. Only in some cases, it may failure to
- detect the small car thumbnail in distance. My intuition is that the original input image is in resolution of 1280x720, and it needs to be downscaled
- to 448x448, so the car in distance will be tiny and probably quite distorted in the downscaled image (448x448). In order to 
- correctly identify the car in distance, we might need to either crop the image instead of directly downscaling it, or retrain 
- the network.
