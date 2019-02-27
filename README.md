@@ -2,7 +2,7 @@
 
 ## Objective
 
-#### A demo of Vehicle Detection System: a monocular camera is used for detecting vehicles. 
+#### Vehicle Detection System. 
 
 
 #### [**(1) Highway Drive (with Lane Departure Warning)**](https://youtu.be/) (Click to see the full video)
